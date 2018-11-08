@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  </head>  
+  <body>
+    
+    <!-- Code goes here -->
+    
+    <!-- The main A-Frame component. This sets up all the rendering and VR capabilities. -->
+    <a-scene>
+      <!-- The geometry component is used to add 3D shapes to the entity.  -->
+      <!-- Rotation is used to rotate the plane to turn it from a vertical surace to one which lies along the ground. -->
+      <a-entity geometry="primitive:plane;width:20;height:20;" rotation="-90 0 0" material="color:#00a5ae;roughness:1" position="0 -1 0"></a-entity>
+      <a-sky color="#ffc368"></a-sky>
+      
+      <!-- We can also import 3D models to the scene. We are using a lighthouse model.  -->
+      <!-- <a-assets> and <a-asset-item> are used to import and store 3D models. -->
+      <a-assets>
+          <!-- Model from Google Poly https://poly.google.com/view/eOEwsOqdcHl by Alex “SAFFY” Safayan -->
+          <a-asset-item id="lighthouse-obj" src="https://cdn.glitch.com/e8b5d783-bf86-4104-9d3b-92edbcf0eb86%2Fmodel-triangulated.obj?1536741656667"></a-asset-item>
+          <a-asset-item id="lighthouse-mtl" src="https://cdn.glitch.com/e8b5d783-bf86-4104-9d3b-92edbcf0eb86%2Fmaterials.mtl?1536741988245"></a-asset-item>
+      </a-assets>
+
+      <a-entity obj-model="obj:#lighthouse-obj;mtl:#lighthouse-mtl" position="10.12 7.50 -5.38" scale="10 10 10"></a-entity>
+
+    </a-scene>
+    
+  </body>
+</html>
+
